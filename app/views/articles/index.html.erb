@@ -13,8 +13,12 @@
             <th><%= article.title %></th>
             <th><%= article.description %></th>
             <th><%= link_to 'Show', article_path(article) %></th>
-            <th><%= button_to 'Delete', article_path(article), method: :delete %></th>
+            <th><%= link_to 'Edit', edit_article_path(article) %></th>
+            <th><%= link_to 'Delete', article_path(article), data: {turbo_method: :delete} %></th>
         </tr>
     <% end %>
     </tbody>
 </table>
+
+
+<%= link_to ' Create New Article', new_article_path %>
